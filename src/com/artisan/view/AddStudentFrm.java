@@ -57,61 +57,61 @@ public class AddStudentFrm extends JInternalFrame {
 	public AddStudentFrm() {
 		setClosable(true);
 		setIconifiable(true);
-		setTitle("\u6DFB\u52A0\u5B66\u751F");
+		setTitle("添加学生");
 		setBounds(100, 100, 450, 300);
 		
-		JLabel label = new JLabel("\u5B66\u751F\u59D3\u540D\uFF1A");
-		label.setIcon(new ImageIcon(AddStudentFrm.class.getResource("/images/\u5B66\u751F\u7BA1\u7406.png")));
+		JLabel label = new JLabel("学生姓名:");
+		label.setIcon(new ImageIcon(AddStudentFrm.class.getResource("/images/xsgl.png")));
 		label.setFont(new Font("微软雅黑", Font.PLAIN, 14));
 		
 		studentNameTextField = new JTextField();
 		studentNameTextField.setColumns(10);
 		
-		JLabel label_1 = new JLabel("\u6240\u5C5E\u73ED\u7EA7\uFF1A");
-		label_1.setIcon(new ImageIcon(AddStudentFrm.class.getResource("/images/\u73ED\u7EA7\u540D\u79F0.png")));
+		JLabel label_1 = new JLabel("所属班级");
+		label_1.setIcon(new ImageIcon(AddStudentFrm.class.getResource("/images/bjmc.png")));
 		label_1.setFont(new Font("微软雅黑", Font.PLAIN, 14));
 		
 		studentClassComboBox = new JComboBox();
 		studentClassComboBox.setModel(new DefaultComboBoxModel(new String[] {}));
 		
-		JLabel label_2 = new JLabel("\u767B\u5F55\u5BC6\u7801\uFF1A");
+		JLabel label_2 = new JLabel("登录密码:");
 		label_2.setIcon(new ImageIcon(AddStudentFrm.class.getResource("/images/password.png")));
 		label_2.setFont(new Font("微软雅黑", Font.PLAIN, 14));
 		
 		studentPasswordField = new JPasswordField();
-		
-		JLabel label_3 = new JLabel("\u5B66\u751F\u6027\u522B\uFF1A");
-		label_3.setIcon(new ImageIcon(AddStudentFrm.class.getResource("/images/\u6027\u522B.png")));
+		 
+		JLabel label_3 = new JLabel("学生性别");
+		label_3.setIcon(new ImageIcon(AddStudentFrm.class.getResource("/images/xb.png")));
 		label_3.setFont(new Font("微软雅黑", Font.PLAIN, 14));
 		
-		studentSexManRadioButton = new JRadioButton("\u7537");
+		studentSexManRadioButton = new JRadioButton("男");
 		studentSexManRadioButton.setSelected(true);
 		
-		studentSexFemalRadioButton = new JRadioButton("\u5973");
+		studentSexFemalRadioButton = new JRadioButton("女");
 		
-		studentSexUnkonwRadioButton = new JRadioButton("\u4FDD\u5BC6");
+		studentSexUnkonwRadioButton = new JRadioButton("保密");
 		
 		sexButtonGroup = new ButtonGroup();
 		sexButtonGroup.add(studentSexManRadioButton);
 		sexButtonGroup.add(studentSexFemalRadioButton);
 		sexButtonGroup.add(studentSexUnkonwRadioButton);
 		
-		JButton submitButton = new JButton("\u786E\u8BA4");
+		JButton submitButton = new JButton("确定");
 		submitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				studentAddAct(ae);
 			}
 		});
-		submitButton.setIcon(new ImageIcon(AddStudentFrm.class.getResource("/images/\u786E\u8BA4.png")));
+		submitButton.setIcon(new ImageIcon(AddStudentFrm.class.getResource("/images/queding.png")));
 		submitButton.setFont(new Font("微软雅黑", Font.PLAIN, 14));
 		
-		JButton resetButton = new JButton("\u91CD\u7F6E");
+		JButton resetButton = new JButton("重置");
 		resetButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				resetValue(ae);
 			}
 		});
-		resetButton.setIcon(new ImageIcon(AddStudentFrm.class.getResource("/images/\u91CD\u7F6E.png")));
+		resetButton.setIcon(new ImageIcon(AddStudentFrm.class.getResource("/images/cz.png")));
 		resetButton.setFont(new Font("微软雅黑", Font.PLAIN, 14));
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(

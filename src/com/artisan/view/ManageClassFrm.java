@@ -60,19 +60,19 @@ public class ManageClassFrm extends JInternalFrame {
 	public ManageClassFrm() {
 		setClosable(true);
 		setIconifiable(true);
-		setTitle("\u73ED\u7EA7\u4FE1\u606F\u7BA1\u7406");
+		setTitle("ç­çº§ä¿¡æ¯ç®¡ç†");
 		setBounds(100, 100, 773, 562);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		
-		JLabel label = new JLabel("\u73ED\u7EA7\u540D\u79F0\uFF1A");
-		label.setIcon(new ImageIcon(ManageClassFrm.class.getResource("/images/\u73ED\u7EA7\u540D\u79F0.png")));
-		label.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 14));
+		JLabel label = new JLabel("ç­çº§åç§°");
+		label.setIcon(new ImageIcon(ManageClassFrm.class.getResource("/images/bjmc.png")));
+		label.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 14));
 		
 		searchClassNameTextField = new JTextField();
 		searchClassNameTextField.setColumns(10);
 		
-		JButton searchButton = new JButton("\u67E5\u8BE2");
+		JButton searchButton = new JButton("æŸ¥è¯¢");
 		searchButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				StudentClass sc = new StudentClass();
@@ -80,39 +80,39 @@ public class ManageClassFrm extends JInternalFrame {
 				setTable(sc);
 			}
 		});
-		searchButton.setIcon(new ImageIcon(ManageClassFrm.class.getResource("/images/\u641C\u7D22.png")));
-		searchButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 14));
+		searchButton.setIcon(new ImageIcon(ManageClassFrm.class.getResource("/images/ss.png")));
+		searchButton.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 14));
 		
-		JLabel label_1 = new JLabel("\u73ED\u7EA7\u540D\u79F0\uFF1A");
-		label_1.setIcon(new ImageIcon(ManageClassFrm.class.getResource("/images/\u73ED\u7EA7\u540D\u79F0.png")));
-		label_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 14));
+		JLabel label_1 = new JLabel("ç­çº§åç§°");
+		label_1.setIcon(new ImageIcon(ManageClassFrm.class.getResource("/images/bjmc.png")));
+		label_1.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 14));
 		
 		editClassNameTextField = new JTextField();
 		editClassNameTextField.setColumns(10);
 		
-		JLabel label_2 = new JLabel("\u73ED\u7EA7\u4FE1\u606F\uFF1A");
-		label_2.setIcon(new ImageIcon(ManageClassFrm.class.getResource("/images/\u73ED\u7EA7\u4ECB\u7ECD.png")));
-		label_2.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 14));
+		JLabel label_2 = new JLabel("ç­çº§ä¿¡æ¯");
+		label_2.setIcon(new ImageIcon(ManageClassFrm.class.getResource("/images/bjjs.png")));
+		label_2.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 14));
 		
 		editClassInfoTextArea = new JTextArea();
 		
-		JButton submitEditButton = new JButton("\u786E\u8BA4\u4FEE\u6539");
+		JButton submitEditButton = new JButton("ç¡®å®šä¿®æ”¹");
 		submitEditButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				submitEditAct(ae);
 			}
 		});
-		submitEditButton.setIcon(new ImageIcon(ManageClassFrm.class.getResource("/images/\u786E\u8BA4.png")));
-		submitEditButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 14));
+		submitEditButton.setIcon(new ImageIcon(ManageClassFrm.class.getResource("/images/queding.png")));
+		submitEditButton.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 14));
 		
-		JButton submitDeleteButton = new JButton("\u5220\u9664");
+		JButton submitDeleteButton = new JButton("åˆ é™¤");
 		submitDeleteButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				deleteClassAct(ae);
 			}
 		});
-		submitDeleteButton.setIcon(new ImageIcon(ManageClassFrm.class.getResource("/images/\u5220\u9664.png")));
-		submitDeleteButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 14));
+		submitDeleteButton.setIcon(new ImageIcon(ManageClassFrm.class.getResource("/images/sc.png")));
+		submitDeleteButton.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 14));
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -185,12 +185,12 @@ public class ManageClassFrm extends JInternalFrame {
 				selectedTableRow(me);
 			}
 		});
-		classListTable.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 12));
+		classListTable.setFont(new Font("å¾®è½¯é›…é»‘", Font.PLAIN, 12));
 		classListTable.setModel(new DefaultTableModel(
 			new Object[][] {
 			},
 			new String[] {
-					"\u73ED\u7EA7\u7F16\u53F7","\u73ED\u7EA7\u540D\u79F0" , "\u73ED\u7EA7\u4FE1\u606F\u4ECB\u7ECD"
+					"ç­çº§ç¼–å·","ç­çº§åç§°" , "ç­çº§ä¿¡æ¯ä»‹ç»"
 			}
 		) {
 			boolean[] columnEditables = new boolean[] {
@@ -207,21 +207,21 @@ public class ManageClassFrm extends JInternalFrame {
 	}
 	protected void deleteClassAct(ActionEvent ae) {
 		// TODO Auto-generated method stub
-		if(JOptionPane.showConfirmDialog(this, "ÄúÈ·¶¨É¾³ıÃ´£¿") != JOptionPane.OK_OPTION){
+		if(JOptionPane.showConfirmDialog(this, "æ‚¨ç¡®å®šåˆ é™¤ä¹ˆï¼Ÿ") != JOptionPane.OK_OPTION){
 			return;
 		}
 		int index = classListTable.getSelectedRow();
 		if(index == -1){
-			JOptionPane.showMessageDialog(this, "ÇëÑ¡ÖĞÒªÉ¾³ıµÄÊı¾İ!");
+			JOptionPane.showMessageDialog(this, "è¯·é€‰ä¸­è¦åˆ é™¤çš„æ•°æ®!");
 			return;
 		}
 		DefaultTableModel dft = (DefaultTableModel) classListTable.getModel();
 		int id = Integer.parseInt(dft.getValueAt(classListTable.getSelectedRow(), 0).toString());
 		ClassDao classDao = new ClassDao();
 		if(classDao.delete(id)){
-			JOptionPane.showMessageDialog(this, "É¾³ı³É¹¦!");
+			JOptionPane.showMessageDialog(this, "åˆ é™¤æˆåŠŸ!");
 		}else{
-			JOptionPane.showMessageDialog(this, "É¾³ıÊ§°Ü!");
+			JOptionPane.showMessageDialog(this, "åˆ é™¤å¤±è´¥!");
 		}
 		classDao.closeDao();
 		setTable(new StudentClass());
@@ -232,7 +232,7 @@ public class ManageClassFrm extends JInternalFrame {
 		ClassDao classDao = new ClassDao();
 		int index = classListTable.getSelectedRow();
 		if(index == -1){
-			JOptionPane.showMessageDialog(this, "ÇëÑ¡ÖĞÒªĞŞ¸ÄµÄÊı¾İ!");
+			JOptionPane.showMessageDialog(this, "è¯·é€‰ä¸­è¦ä¿®æ”¹çš„æ•°æ®!");
 			return;
 		}
 		DefaultTableModel dft = (DefaultTableModel) classListTable.getModel();
@@ -241,11 +241,11 @@ public class ManageClassFrm extends JInternalFrame {
 		String editClassName = editClassNameTextField.getText().toString();
 		String editClassInfo = editClassInfoTextArea.getText().toString();
 		if(StringUtil.isEmpty(editClassName)){
-			JOptionPane.showMessageDialog(this, "ÇëÌîĞ´ÒªĞŞ¸ÄµÄÃû³Æ!");
+			JOptionPane.showMessageDialog(this, "è¯·å¡«å†™è¦ä¿®æ”¹çš„åç§°!");
 			return;
 		}
 		if(className.equals(editClassName) && classInfo.equals(editClassInfo)){
-			JOptionPane.showMessageDialog(this, "Äú»¹Ã»ÓĞ×öÈÎºÎĞŞ¸Ä!");
+			JOptionPane.showMessageDialog(this, "æ‚¨è¿˜æ²¡æœ‰åšä»»ä½•ä¿®æ”¹!");
 			return;
 		}
 		int id = Integer.parseInt(dft.getValueAt(classListTable.getSelectedRow(), 0).toString());
@@ -254,9 +254,9 @@ public class ManageClassFrm extends JInternalFrame {
 		sc.setName(editClassName);
 		sc.setInfo(editClassInfo);
 		if(classDao.update(sc)){
-			JOptionPane.showMessageDialog(this, "¸üĞÂ³É¹¦!");
+			JOptionPane.showMessageDialog(this, "æ›´æ–°æˆåŠŸ!");
 		}else{
-			JOptionPane.showMessageDialog(this, "¸üĞÂÊ§°Ü!");
+			JOptionPane.showMessageDialog(this, "æ›´æ–°å¤±è´¥!");
 		}
 		classDao.closeDao();
 		setTable(new StudentClass());

@@ -64,29 +64,29 @@ public class ManageTeacherFrm extends JInternalFrame {
 	public ManageTeacherFrm() {
 		setClosable(true);
 		setIconifiable(true);
-		setTitle("\u6559\u5E08\u4FE1\u606F\u7BA1\u7406");
+		setTitle("教师信息管理");
 		setBounds(100, 100, 805, 691);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		
-		JLabel label = new JLabel("\u6559\u5E08\u59D3\u540D\uFF1A");
-		label.setIcon(new ImageIcon(ManageTeacherFrm.class.getResource("/images/\u8001\u5E08.png")));
+		JLabel label = new JLabel("教师姓名:");
+		label.setIcon(new ImageIcon(ManageTeacherFrm.class.getResource("/images/bjmc.png")));
 		label.setFont(new Font("微软雅黑", Font.PLAIN, 14));
 		
 		searchTeacherNameTextField = new JTextField();
 		searchTeacherNameTextField.setColumns(10);
 		
-		JButton searchTeacherButton = new JButton("\u67E5\u8BE2");
+		JButton searchTeacherButton = new JButton("查询");
 		searchTeacherButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				searchTeacher(e);
 			}
 		});
-		searchTeacherButton.setIcon(new ImageIcon(ManageTeacherFrm.class.getResource("/images/\u641C\u7D22.png")));
+		searchTeacherButton.setIcon(new ImageIcon(ManageTeacherFrm.class.getResource("/images/ss.png")));
 		searchTeacherButton.setFont(new Font("微软雅黑", Font.PLAIN, 14));
 		
 		JPanel panel = new JPanel();
-		panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "\u6559\u5E08\u4FE1\u606F\u4FEE\u6539", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "教师信息修改", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -121,61 +121,61 @@ public class ManageTeacherFrm extends JInternalFrame {
 					.addContainerGap(56, Short.MAX_VALUE))
 		);
 		
-		JLabel label_1 = new JLabel("\u6559\u5E08\u59D3\u540D\uFF1A");
-		label_1.setIcon(new ImageIcon(ManageTeacherFrm.class.getResource("/images/\u8001\u5E08.png")));
+		JLabel label_1 = new JLabel("教师姓名:");
+		label_1.setIcon(new ImageIcon(ManageTeacherFrm.class.getResource("/images/ls.png")));
 		label_1.setFont(new Font("微软雅黑", Font.PLAIN, 14));
 		
 		editTeacherNameTextField = new JTextField();
 		editTeacherNameTextField.setColumns(10);
 		
-		JLabel label_2 = new JLabel("\u6559\u5E08\u6027\u522B\uFF1A");
-		label_2.setIcon(new ImageIcon(ManageTeacherFrm.class.getResource("/images/\u6027\u522B.png")));
+		JLabel label_2 = new JLabel("教师性别:");
+		label_2.setIcon(new ImageIcon(ManageTeacherFrm.class.getResource("/images/xb.png")));
 		label_2.setFont(new Font("微软雅黑", Font.PLAIN, 14));
 		
 		ButtonGroup buttonGroup = new ButtonGroup();
-		editTeacherSexManRadioButton = new JRadioButton("\u7537");
+		editTeacherSexManRadioButton = new JRadioButton("男");
 		editTeacherSexManRadioButton.setSelected(true);
 		
-		editTeacherSexFemalRadioButton = new JRadioButton("\u5973");
+		editTeacherSexFemalRadioButton = new JRadioButton("女");
 		buttonGroup.add(editTeacherSexManRadioButton);
 		buttonGroup.add(editTeacherSexFemalRadioButton);
 		
-		JLabel label_3 = new JLabel("\u6559\u5E08\u804C\u79F0\uFF1A");
-		label_3.setIcon(new ImageIcon(ManageTeacherFrm.class.getResource("/images/\u804C\u79F0\u8BC4\u5B9A.png")));
+		JLabel label_3 = new JLabel("教师职称:");
+		label_3.setIcon(new ImageIcon(ManageTeacherFrm.class.getResource("/images/zcpd.png")));
 		label_3.setFont(new Font("微软雅黑", Font.PLAIN, 14));
 		
 		editTeacherTitleTextField = new JTextField();
 		editTeacherTitleTextField.setColumns(10);
 		
-		JLabel label_4 = new JLabel("\u6559\u5E08\u5E74\u9F84\uFF1A");
-		label_4.setIcon(new ImageIcon(ManageTeacherFrm.class.getResource("/images/\u5E74\u9F84.png")));
+		JLabel label_4 = new JLabel("教师年龄:");
+		label_4.setIcon(new ImageIcon(ManageTeacherFrm.class.getResource("/images/nl.png")));
 		label_4.setFont(new Font("微软雅黑", Font.PLAIN, 14));
 		
 		editTeacherAgeTextField = new JTextField();
 		editTeacherAgeTextField.setColumns(10);
 		
-		JLabel label_5 = new JLabel("\u767B\u5F55\u5BC6\u7801\uFF1A");
-		label_5.setIcon(new ImageIcon(ManageTeacherFrm.class.getResource("/images/\u5BC6\u7801.png")));
+		JLabel label_5 = new JLabel("登录密码:");
+		label_5.setIcon(new ImageIcon(ManageTeacherFrm.class.getResource("/images/mm.png")));
 		label_5.setFont(new Font("微软雅黑", Font.PLAIN, 14));
 		
 		editTeacherPasswordField = new JPasswordField();
 		
-		JButton editTeacherSubmitButton = new JButton("\u786E\u8BA4\u4FEE\u6539");
+		JButton editTeacherSubmitButton = new JButton("确定修改");
 		editTeacherSubmitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				editTeacherAct(ae);
 			}
 		});
-		editTeacherSubmitButton.setIcon(new ImageIcon(ManageTeacherFrm.class.getResource("/images/\u786E\u8BA4.png")));
+		editTeacherSubmitButton.setIcon(new ImageIcon(ManageTeacherFrm.class.getResource("/images/queding.png")));
 		editTeacherSubmitButton.setFont(new Font("微软雅黑", Font.PLAIN, 14));
 		
-		deleteTeacherButton = new JButton("\u5220\u9664\u4FE1\u606F");
+		deleteTeacherButton = new JButton("删除学生");
 		deleteTeacherButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				deleteTeacher(ae);
 			}
 		});
-		deleteTeacherButton.setIcon(new ImageIcon(ManageTeacherFrm.class.getResource("/images/\u5220\u9664.png")));
+		deleteTeacherButton.setIcon(new ImageIcon(ManageTeacherFrm.class.getResource("/images/sc.png")));
 		deleteTeacherButton.setFont(new Font("微软雅黑", Font.PLAIN, 14));
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
@@ -253,7 +253,7 @@ public class ManageTeacherFrm extends JInternalFrame {
 			new Object[][] {
 			},
 			new String[] {
-				"\u6559\u5E08ID", "\u6559\u5E08\u59D3\u540D", "\u6559\u5E08\u6027\u522B", "\u6559\u5E08\u804C\u79F0", "\u6559\u5E08\u5E74\u9F84", "\u767B\u5F55\u5BC6\u7801"
+				"教师ID", "教师姓名", "教师性别", "教师职称", "教师年龄", "登录密码"
 			}
 		) {
 			boolean[] columnEditables = new boolean[] {

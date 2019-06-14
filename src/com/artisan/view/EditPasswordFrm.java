@@ -52,54 +52,54 @@ public class EditPasswordFrm extends JInternalFrame {
 	 * Create the frame.
 	 */
 	public EditPasswordFrm() {
-		setTitle("\u4FEE\u6539\u5BC6\u7801");
+		setTitle("修改密码");
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		setClosable(true);
 		setIconifiable(true);
-		JLabel label = new JLabel("\u539F\u5BC6\u7801\uFF1A");
+		JLabel label = new JLabel("原密码:");
 		label.setIcon(new ImageIcon(EditPasswordFrm.class.getResource("/images/password.png")));
 		label.setFont(new Font("微软雅黑", Font.PLAIN, 14));
 		
 		oldPasswordTextField = new JPasswordField();
 		oldPasswordTextField.setColumns(10);
 		
-		JLabel label_1 = new JLabel("\u65B0\u5BC6\u7801\uFF1A");
-		label_1.setIcon(new ImageIcon(EditPasswordFrm.class.getResource("/images/\u4FEE\u6539\u5BC6\u7801.png")));
+		JLabel label_1 = new JLabel("新密码:");
+		label_1.setIcon(new ImageIcon(EditPasswordFrm.class.getResource("/images/mm.png")));
 		label_1.setFont(new Font("微软雅黑", Font.PLAIN, 14));
 		
 		newPasswordTextField = new JPasswordField();
 		newPasswordTextField.setColumns(10);
 		
-		JLabel label_2 = new JLabel("\u786E\u8BA4\u5BC6\u7801\uFF1A");
-		label_2.setIcon(new ImageIcon(EditPasswordFrm.class.getResource("/images/\u4FEE\u6539\u5BC6\u7801.png")));
+		JLabel label_2 = new JLabel("确定密码:");
+		label_2.setIcon(new ImageIcon(EditPasswordFrm.class.getResource("/images/mm.png")));
 		label_2.setFont(new Font("微软雅黑", Font.PLAIN, 14));
 		
 		confirmPasswordTextField = new JPasswordField();
 		confirmPasswordTextField.setColumns(10);
 		
-		JButton submitButton = new JButton("\u786E\u8BA4");
+		JButton submitButton = new JButton("确定");
 		submitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				submitEdit(e);
 			}
 		});
-		submitButton.setIcon(new ImageIcon(EditPasswordFrm.class.getResource("/images/\u786E\u8BA4.png")));
+		submitButton.setIcon(new ImageIcon(EditPasswordFrm.class.getResource("/images/queding.png")));
 		submitButton.setFont(new Font("微软雅黑", Font.PLAIN, 14));
 		
-		JButton resetButton = new JButton("\u91CD\u7F6E");
+		JButton resetButton = new JButton("重置");
 		resetButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				resetValue(ae);
 			}
 		});
-		resetButton.setIcon(new ImageIcon(EditPasswordFrm.class.getResource("/images/\u91CD\u7F6E.png")));
+		resetButton.setIcon(new ImageIcon(EditPasswordFrm.class.getResource("/images/cz.png")));
 		resetButton.setFont(new Font("微软雅黑", Font.PLAIN, 14));
 		
-		JLabel label_3 = new JLabel("\u5F53\u524D\u7528\u6237\uFF1A");
-		label_3.setIcon(new ImageIcon(EditPasswordFrm.class.getResource("/images/\u7528\u6237\u540D.png")));
+		JLabel label_3 = new JLabel("当前用户:");
+		label_3.setIcon(new ImageIcon(EditPasswordFrm.class.getResource("/images/yhm.png")));
 		label_3.setFont(new Font("微软雅黑", Font.PLAIN, 14));
 		
 		currentUserLabel = new JLabel("");

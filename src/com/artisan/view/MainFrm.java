@@ -64,7 +64,7 @@ public class MainFrm extends JFrame {
 				}
 			}
 		});
-		menuItem_1.setIcon(new ImageIcon(MainFrm.class.getResource("/images/tcxt.png")));
+		menuItem_1.setIcon(new ImageIcon(MainFrm.class.getResource("/images/tc.png")));
 		menu.add(menuItem_1);
 		
 		JMenu menu_1 = new JMenu("学生管理");
@@ -79,7 +79,7 @@ public class MainFrm extends JFrame {
 				desktopPane.add(addStudentFrm);
 			}
 		});
-		addStudentMenuItem.setIcon(new ImageIcon(MainFrm.class.getResource("/images/tjxs.png")));
+		addStudentMenuItem.setIcon(new ImageIcon(MainFrm.class.getResource("/images/tj.png")));
 		menu_1.add(addStudentMenuItem);
 		
 		JMenuItem menuItem_3 = new JMenuItem("学生列表");
@@ -90,7 +90,7 @@ public class MainFrm extends JFrame {
 				desktopPane.add(studentManageFrm);
 			}
 		});
-		menuItem_3.setIcon(new ImageIcon(MainFrm.class.getResource("/images/xslb.png")));
+		menuItem_3.setIcon(new ImageIcon(MainFrm.class.getResource("/images/xsgl.png")));
 		menu_1.add(menuItem_3);
 		
 		manageClassMenu = new JMenu("班级管理");
@@ -103,7 +103,7 @@ public class MainFrm extends JFrame {
 				addStudentClass(ae);
 			}
 		});
-		menuItem_4.setIcon(new ImageIcon(MainFrm.class.getResource("/images/tjbj.png")));
+		menuItem_4.setIcon(new ImageIcon(MainFrm.class.getResource("/images/tj.png")));
 		manageClassMenu.add(menuItem_4);
 		
 		JMenuItem menuItem_5 = new JMenuItem("班级列表");
@@ -118,7 +118,7 @@ public class MainFrm extends JFrame {
 		manageClassMenu.add(menuItem_5);
 		
 		manageTeacherMenu = new JMenu("教师管理");
-		manageTeacherMenu.setIcon(new ImageIcon(MainFrm.class.getResource("/images/jsgl.png")));
+		manageTeacherMenu.setIcon(new ImageIcon(MainFrm.class.getResource("/images/ls.png")));
 		menuBar.add(manageTeacherMenu);
 		
 		addTeacherMenuItem = new JMenuItem("添加教师");
@@ -129,7 +129,7 @@ public class MainFrm extends JFrame {
 				desktopPane.add(addTeacherFrm);
 			}
 		});
-		addTeacherMenuItem.setIcon(new ImageIcon(MainFrm.class.getResource("/images/tjjs.png")));
+		addTeacherMenuItem.setIcon(new ImageIcon(MainFrm.class.getResource("/images/tj.png")));
 		manageTeacherMenu.add(addTeacherMenuItem);
 		
 		JMenuItem menuItem_8 = new JMenuItem("教师列表");
@@ -140,7 +140,7 @@ public class MainFrm extends JFrame {
 				desktopPane.add(manageTeacherFrm);
 			}
 		});
-		menuItem_8.setIcon(new ImageIcon(MainFrm.class.getResource("/images/jslb.png")));
+		menuItem_8.setIcon(new ImageIcon(MainFrm.class.getResource("/images/yhlb.png")));
 		manageTeacherMenu.add(menuItem_8);
 		
 		JMenu menu_3 = new JMenu("帮助");
