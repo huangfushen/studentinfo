@@ -14,10 +14,14 @@ public class AdminDao extends BaseDao {
 		String sql = "select * from s_admin where name=? and password=?";
 		Admin adminRst = null;
 		try {
+			//使用PreparedStatement可防止sql注入
 			PreparedStatement prst = con.prepareStatement(sql);//把sql语句传给数据库操作对象
+			//获取admin的用户名给sql第一个问号
 			prst.setString(1, admin.getName());
 			prst.setString(2, admin.getPassword());
+			//执行
 			ResultSet executeQuery = prst.executeQuery();
+			//参考放回结果是否有值，并创建对象将值赋给结果对象
 			if(executeQuery.next()){
 				adminRst = new Admin();
 				adminRst.setId(executeQuery.getInt("id"));
@@ -31,6 +35,9 @@ public class AdminDao extends BaseDao {
 		}
 		return adminRst;
 	}
+	/*
+	 * 修改管理员密码
+	 */
 	public String editPassword(Admin admin,String newPassword){
 		String sql = "select * from s_admin where id=? and password=?";
 		PreparedStatement prst = null;

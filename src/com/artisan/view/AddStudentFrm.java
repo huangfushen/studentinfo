@@ -90,12 +90,12 @@ public class AddStudentFrm extends JInternalFrame {
 		studentSexFemalRadioButton = new JRadioButton("女");
 		
 		studentSexUnkonwRadioButton = new JRadioButton("保密");
-		
+		//按钮组 单选框
 		sexButtonGroup = new ButtonGroup();
 		sexButtonGroup.add(studentSexManRadioButton);
 		sexButtonGroup.add(studentSexFemalRadioButton);
 		sexButtonGroup.add(studentSexUnkonwRadioButton);
-		
+		//点击确定执行事件，添加方法
 		JButton submitButton = new JButton("确定");
 		submitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
@@ -179,9 +179,10 @@ public class AddStudentFrm extends JInternalFrame {
 					.addContainerGap())
 		);
 		getContentPane().setLayout(groupLayout);
+		//获取班级信息进行用于下拉菜单使用
 		setStudentClassInfo();
 	}
-
+	//重置输入框的值
 	protected void resetValue(ActionEvent ae) {
 		// TODO Auto-generated method stub
 		studentNameTextField.setText("");
@@ -193,6 +194,7 @@ public class AddStudentFrm extends JInternalFrame {
 
 	protected void studentAddAct(ActionEvent ae) {
 		// TODO Auto-generated method stub
+		//获取输入框内容
 		String studentName = studentNameTextField.getText().toString();
 		String studentPassword = studentPasswordField.getText().toString();
 		if(StringUtil.isEmpty(studentName)){
@@ -203,7 +205,9 @@ public class AddStudentFrm extends JInternalFrame {
 			JOptionPane.showMessageDialog(this, "请填写密码!");
 			return;
 		}
+		//获取所属班级
 		StudentClass sc = (StudentClass)studentClassComboBox.getSelectedItem();
+		//获取性别，三目运算符
 		String sex = studentSexManRadioButton.isSelected() ? studentSexManRadioButton.getText() : (studentSexFemalRadioButton.isSelected() ? studentSexFemalRadioButton.getText() : studentSexUnkonwRadioButton.getText());
 		Student student = new Student();
 		student.setName(studentName);
@@ -211,6 +215,7 @@ public class AddStudentFrm extends JInternalFrame {
 		student.setPassword(studentPassword);
 		student.setSex(sex);
 		StudentDao studentDao = new StudentDao();
+		//进行添加操作，将数据添加至数据库
 		if(studentDao.addStudent(student)){
 			JOptionPane.showMessageDialog(this, "添加成功!");
 		}else{
@@ -218,7 +223,7 @@ public class AddStudentFrm extends JInternalFrame {
 		}
 		resetValue(ae);
 	}
-	
+	//获取班级信息
 	private void setStudentClassInfo(){
 		ClassDao classDao = new ClassDao();
 		List<StudentClass> classList = classDao.getClassList(new StudentClass());

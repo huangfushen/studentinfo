@@ -113,6 +113,7 @@ public class ManageClassFrm extends JInternalFrame {
 		});
 		submitDeleteButton.setIcon(new ImageIcon(ManageClassFrm.class.getResource("/images/sc.png")));
 		submitDeleteButton.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+		//窗体布局
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -205,11 +206,13 @@ public class ManageClassFrm extends JInternalFrame {
 		getContentPane().setLayout(groupLayout);
 		setTable(new StudentClass());
 	}
+	//删除操作
 	protected void deleteClassAct(ActionEvent ae) {
 		// TODO Auto-generated method stub
 		if(JOptionPane.showConfirmDialog(this, "您确定删除么？") != JOptionPane.OK_OPTION){
 			return;
 		}
+		//获取要操作数据的信息行数
 		int index = classListTable.getSelectedRow();
 		if(index == -1){
 			JOptionPane.showMessageDialog(this, "请选中要删除的数据!");
@@ -218,6 +221,7 @@ public class ManageClassFrm extends JInternalFrame {
 		DefaultTableModel dft = (DefaultTableModel) classListTable.getModel();
 		int id = Integer.parseInt(dft.getValueAt(classListTable.getSelectedRow(), 0).toString());
 		ClassDao classDao = new ClassDao();
+		//进行删除操作
 		if(classDao.delete(id)){
 			JOptionPane.showMessageDialog(this, "删除成功!");
 		}else{
@@ -226,20 +230,24 @@ public class ManageClassFrm extends JInternalFrame {
 		classDao.closeDao();
 		setTable(new StudentClass());
 	}
-
+	//修改操作
 	protected void submitEditAct(ActionEvent ae) {
 		// TODO Auto-generated method stub
 		ClassDao classDao = new ClassDao();
+		//获取要操作数据的信息行数
 		int index = classListTable.getSelectedRow();
 		if(index == -1){
 			JOptionPane.showMessageDialog(this, "请选中要修改的数据!");
 			return;
 		}
+		//获取原始数据
 		DefaultTableModel dft = (DefaultTableModel) classListTable.getModel();
 		String className = dft.getValueAt(classListTable.getSelectedRow(), 1).toString();
 		String classInfo = dft.getValueAt(classListTable.getSelectedRow(), 2).toString();
+		//获取要修改的数据
 		String editClassName = editClassNameTextField.getText().toString();
 		String editClassInfo = editClassInfoTextArea.getText().toString();
+		//判断是否为空
 		if(StringUtil.isEmpty(editClassName)){
 			JOptionPane.showMessageDialog(this, "请填写要修改的名称!");
 			return;
@@ -248,11 +256,13 @@ public class ManageClassFrm extends JInternalFrame {
 			JOptionPane.showMessageDialog(this, "您还没有做任何修改!");
 			return;
 		}
+		//获取id
 		int id = Integer.parseInt(dft.getValueAt(classListTable.getSelectedRow(), 0).toString());
 		StudentClass sc = new StudentClass();
 		sc.setId(id);
 		sc.setName(editClassName);
 		sc.setInfo(editClassInfo);
+		//进行修改操作
 		if(classDao.update(sc)){
 			JOptionPane.showMessageDialog(this, "更新成功!");
 		}else{
@@ -261,14 +271,14 @@ public class ManageClassFrm extends JInternalFrame {
 		classDao.closeDao();
 		setTable(new StudentClass());
 	}
-
+//获取表格中选中的行数
 	protected void selectedTableRow(MouseEvent me) {
 		// TODO Auto-generated method stub
 		DefaultTableModel dft = (DefaultTableModel) classListTable.getModel();
 		editClassNameTextField.setText(dft.getValueAt(classListTable.getSelectedRow(), 1).toString());
 		editClassInfoTextArea.setText(dft.getValueAt(classListTable.getSelectedRow(), 2).toString());
 	}
-
+	//将数据添加到表格中
 	private void setTable(StudentClass studentClass){
 		DefaultTableModel dft = (DefaultTableModel) classListTable.getModel();
 		dft.setRowCount(0);

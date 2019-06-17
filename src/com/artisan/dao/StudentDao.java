@@ -15,7 +15,7 @@ public class StudentDao extends BaseDao {
 	public boolean addStudent(Student student){
 		String sql = "insert into s_student values(null,?,?,?,?)";
 		try {
-			java.sql.PreparedStatement preparedStatement = con.prepareStatement(sql);
+			PreparedStatement preparedStatement = con.prepareStatement(sql);
 			preparedStatement.setString(1, student.getName());
 			preparedStatement.setInt(2, student.getClassId());
 			preparedStatement.setString(3, student.getPassword());
@@ -27,6 +27,7 @@ public class StudentDao extends BaseDao {
 		}
 		return false;
 	}
+	//获取所有学生的信息
 	public List<Student> getStudentList(Student student){
 		List<Student> retList = new ArrayList<Student>();
 		StringBuffer sqlString = new StringBuffer("select * from s_student");
@@ -54,6 +55,7 @@ public class StudentDao extends BaseDao {
 		}
 		return retList;
 	}
+	//删除学生信息
 	public boolean delete(int id){
 		String sql = "delete from s_student where id=?";
 		try {
@@ -68,6 +70,7 @@ public class StudentDao extends BaseDao {
 		}
 		return false;
 	}
+	//修改学生信息
 	public boolean update(Student student){
 		String sql = "update s_student set name=?, classId=?,sex=?,password=? where id=?";
 		try {
@@ -86,6 +89,7 @@ public class StudentDao extends BaseDao {
 		}
 		return false;
 	}
+	//在系统设置中修改密码方法
 	public String editPassword(Student student,String newPassword){
 		String sql = "select * from s_student where id=? and password=?";
 		PreparedStatement prst = null;
@@ -120,10 +124,11 @@ public class StudentDao extends BaseDao {
 		}//把sql语句传给数据库操作对象
 		return retString;
 	}
+	//登录操作
 	public Student login(Student student){
 		String sql = "select * from s_student where name=? and password=?";
 		Student studentRst = null;
-		try {
+		try {  
 			PreparedStatement prst = con.prepareStatement(sql);//把sql语句传给数据库操作对象
 			prst.setString(1, student.getName());
 			prst.setString(2, student.getPassword());

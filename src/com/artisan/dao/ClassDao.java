@@ -16,10 +16,11 @@ import com.artisan.util.StringUtil;
  *
  */
 public class ClassDao extends BaseDao {
+	//添加班级方法
 	public boolean addClass(StudentClass scl){
 		String sql = "insert into s_class values(null,?,?)";
 		try {
-			java.sql.PreparedStatement preparedStatement = con.prepareStatement(sql);
+			PreparedStatement preparedStatement = con.prepareStatement(sql);
 			preparedStatement.setString(1, scl.getName());
 			preparedStatement.setString(2, scl.getInfo());
 			if(preparedStatement.executeUpdate() > 0)return true;
@@ -29,6 +30,7 @@ public class ClassDao extends BaseDao {
 		}
 		return false;
 	}
+	//获取数据库中班级的信息，并返回
 	public List<StudentClass> getClassList(StudentClass studentClass){
 		List<StudentClass> retList = new ArrayList<StudentClass>();
 		String sqlString = "select * from s_class";
@@ -51,6 +53,7 @@ public class ClassDao extends BaseDao {
 		}
 		return retList;
 	}
+	//删除操作
 	public boolean delete(int id){
 		String sql = "delete from s_class where id=?";
 		try {
@@ -65,6 +68,7 @@ public class ClassDao extends BaseDao {
 		}
 		return false;
 	}
+	//修改操作
 	public boolean update(StudentClass sc){
 		String sql = "update s_class set name=?, info=? where id=?";
 		try {

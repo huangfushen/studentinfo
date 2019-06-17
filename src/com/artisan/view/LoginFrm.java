@@ -54,6 +54,7 @@ public class LoginFrm extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * 登录窗口
 	 */
 	public LoginFrm() {
 		setTitle("登录界面");
@@ -88,7 +89,7 @@ public class LoginFrm extends JFrame {
 		userTypeComboBox = new JComboBox();
 		userTypeComboBox.setModel(new DefaultComboBoxModel(new UserType[] {UserType.ADMIN, UserType.TEACHER, UserType.STUDENT}));
 		userTypeComboBox.setFont(new Font("微软雅黑", Font.PLAIN, 14));
-		
+		//添加按钮点击事件
 		JButton loginButton = new JButton("登录");
 		loginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
@@ -97,7 +98,7 @@ public class LoginFrm extends JFrame {
 		});
 		loginButton.setIcon(new ImageIcon(LoginFrm.class.getResource("/images/dl.png")));
 		loginButton.setFont(new Font("微软雅黑", Font.PLAIN, 14));
-		
+		//添加按钮点击事件
 		JButton resetButton = new JButton("重置");
 		resetButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
@@ -106,6 +107,7 @@ public class LoginFrm extends JFrame {
 		});
 		resetButton.setIcon(new ImageIcon(LoginFrm.class.getResource("/images/cz.png")));
 		resetButton.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+		//窗体布局
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -162,12 +164,15 @@ public class LoginFrm extends JFrame {
 		);
 		contentPane.setLayout(gl_contentPane);
 	}
-
+	//登录方法
 	protected void loginAct(ActionEvent ae) {
 		// TODO Auto-generated method stub
+		//获取用户名、密码
 		String userName = userNameTextField.getText().toString();
 		String password = passwordTextField.getText().toString();
+		//获取类型
 		UserType selectedItem = (UserType)userTypeComboBox.getSelectedItem();
+		//判断用户名、密码是否为空
 		if(StringUtil.isEmpty(userName)){
 			JOptionPane.showMessageDialog(this, "用户名不能为空！");
 			return;
@@ -176,10 +181,12 @@ public class LoginFrm extends JFrame {
 			JOptionPane.showMessageDialog(this, "密码不能为空！");
 			return;
 		}
+		//判断用户类型
 		Admin admin = null;
 		if("系统管理员".equals(selectedItem.getName())){
 			AdminDao adminDao = new AdminDao();
 			Admin adminTmp = new Admin();
+			//添加adminTmp对象赋值
 			adminTmp.setName(userName);
 			adminTmp.setPassword(password);
 			admin = adminDao.login(adminTmp);
@@ -225,7 +232,7 @@ public class LoginFrm extends JFrame {
 			new MainFrm(selectedItem, student).setVisible(true);
 		}
 	}
-
+//重置事件
 	protected void restValue(ActionEvent ae) {
 		// TODO Auto-generated method stub
 		userNameTextField.setText("");

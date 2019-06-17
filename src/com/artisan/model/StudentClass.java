@@ -2,7 +2,7 @@ package com.artisan.model;
 /**
  * 
  * @author llq
- *°à¼¶ĞÅÏ¢entity
+ *ç­çº§ç±»
  */
 public class StudentClass {
 	private int id;

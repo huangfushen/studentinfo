@@ -1,11 +1,14 @@
 package com.artisan.model;
 
+//系统管理员类
 
 public class Admin{
-	private int id;
-	private String name;
-	private String password;
-	private String createDate;
+	private int id;//管理员id
+	private String name;//用户名
+	private String password;//密码
+	private String createDate;//创建时间
+	
+	//自动生成get、set方法
 	public int getId() {
 		return id;
 	}

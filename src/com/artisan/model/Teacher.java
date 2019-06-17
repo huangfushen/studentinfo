@@ -2,7 +2,7 @@ package com.artisan.model;
 /**
  * 
  * @author llq
- *½ÌÊ¦ĞÅÏ¢±í
+ *æ•™å¸ˆç±»
  */
 public class Teacher {
 	private int id;

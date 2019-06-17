@@ -1,5 +1,5 @@
 package com.artisan.model;
-
+//学生类
 public class Student {
 	private int id;
 	private String name;

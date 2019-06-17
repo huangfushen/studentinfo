@@ -68,6 +68,7 @@ public class AddStudentClassFrm extends JInternalFrame {
 		JButton submitButton = new JButton("提交");
 		submitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
+				//提交操作 ，执行submitClass方法
 				submitClass(ae);
 			}
 		});
@@ -82,6 +83,7 @@ public class AddStudentClassFrm extends JInternalFrame {
 		});
 		restButton.setIcon(new ImageIcon(AddStudentClassFrm.class.getResource("/images/cz.png")));
 		restButton.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+		//窗体布局
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -128,16 +130,19 @@ public class AddStudentClassFrm extends JInternalFrame {
 
 	protected void submitClass(ActionEvent ae) {
 		// TODO Auto-generated method stub
+		//获取输入框信息
 		String className = classNameTextField.getText().toString();
 		String classInfo = classInfotextArea.getText().toString();
 		if(StringUtil.isEmpty(className)){
 			JOptionPane.showMessageDialog(this, "班级名称不能为空！");
 			return;
 		}
+		//创建班级对象
 		StudentClass scl = new StudentClass();
 		scl.setName(className);
 		scl.setInfo(classInfo);
 		ClassDao classDao = new ClassDao();
+		//向数据库中添加班级数据
 		if(classDao.addClass(scl)){
 			JOptionPane.showMessageDialog(this, "班级添加成功！");
 		}else{
@@ -146,7 +151,7 @@ public class AddStudentClassFrm extends JInternalFrame {
 		classDao.closeDao();
 		resetValue(ae);
 	}
-
+	//重置操作
 	protected void resetValue(ActionEvent e) {
 		// TODO Auto-generated method stub
 		classNameTextField.setText("");
