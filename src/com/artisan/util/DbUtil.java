@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DbUtil {
-	private String dbUrl="jdbc:mysql://localhost:3306/db_student?useUnicode=true&characterEncoding=utf8"; // 数据库连接地址
+	private String dbUrl="jdbc:mysql://localhost:3306/student_system?useUnicode=true&characterEncoding=utf8"; // 数据库连接地址
 	private String dbUserName="root"; // 用户名
 	private String dbPassword="root"; // 密码
 	private String jdbcName="com.mysql.jdbc.Driver"; // 驱动名称
